@@ -1,0 +1,36 @@
+Reikalavimai:
+- Laravel
+Restoranų kūrimas (pavadinimas, staliukų skaičius, max žmonių skaičius)
+Rezervacijos puslapis, viena bendra forma viename puslapyje.
+Reikalingas:
+- Restorano pasirinkimas
+- Rezervuotojo vardas, pavardė, emailas, telefonas
+- Žmonių sąrašas (vardas, pavardė, emailas)
+- Rezervacijos datos pasirinkimas
+- Rezervacijos laikas 1,2,3h...
+
+*Validacija ar dar yra laisvų staliukų ir max žmonių ar neviršija.
+*Tikrinant ar yra laisvų vietų lankytojams, pagalvoti apie realu scenarijų kuomet atėjus 10 lankytojų kompanijai, negalima jų pasodinti prie vieno staliuko.
+
+Rezervacijų peržiūra
+Admin prisijungimas nėra būtinas, orientuojantuotis į patogią rezervacijos formą. Front end dalies daryti nereikia.
+
+
+1. Migrations / Seeders / Models
+    1.1 restaurants (name)
+    1.2 tables (seats)
+    1.3 restaurants_tables (restaurant_id, table_id)
+
+    1.4 bookers (name, surname, email, phone)
+    1.5 guests (name, surname, email)
+    1.6 bookers_guests (booker_id, guest_id)
+
+    1.7 reservations (booker_id, restaurant_id, restaurant_table_id, start_date, end_date)
+
+FLOW
+
+1. Pasirenki restoraną, suvedi datą ir laiką, žmonių skaičių
+2. Gauni atsakymą - yra ar nėra laisvų stalų
+3. Yra laisvų:
+    3.1 Gauni stalus
+4. Nėra laisvų - gauni žinutę, kad pasirinktu metu nėra lasivų stalų.
